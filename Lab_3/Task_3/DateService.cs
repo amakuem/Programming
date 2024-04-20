@@ -17,11 +17,14 @@ namespace Task_3
             toDate = DateTime.Parse(date);
             return obj.TextInfo.ToTitleCase(obj.DateTimeFormat.GetDayName(toDate.DayOfWeek));
         }
-        public static DateTime GetDaysSpan(int day, int month, int year)
+        public static int GetDaysSpan(int day, int month, int year)
         {
-            DateTime nowDate;
-            DateTime.TryParse($"{day}/{month}/{year}", out  nowDate);
-            return nowDate.AddDays(1);
+            DateTime newDate;
+            DateTime today = DateTime.Today;
+
+            DateTime.TryParse($"{day}/{month}/{year}", out  newDate);
+            
+            return (newDate - today).Days;
         }
     }
 }

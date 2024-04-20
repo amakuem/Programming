@@ -71,8 +71,8 @@
             string? answ;
             do
             {
-                int day, month, year;
-                DateTime date, nextDay;
+                int day, month, year, difference;
+                DateTime date;
                 string dayOfWeek;
                 bool ok;
 
@@ -104,9 +104,9 @@
                 }
                 
 
-                nextDay = DateService.GetDaysSpan(day, month, year);
+                difference = DateService.GetDaysSpan(day, month, year);
 
-                Console.WriteLine($"Введенная дата: {nextDay.Day.ToString("D2")}.{nextDay.Month.ToString("D2")}.{nextDay.Year}");
+                Console.WriteLine($"Разница между днями: {difference}");
 
                 //Console.WriteLine($"Следующий день: {nextDay.ToString("dd.MM.yyyy")}");
                 Console.WriteLine("Хотите ли вы продолжить? (1 - Продолжить / 2 - Закончить)");
